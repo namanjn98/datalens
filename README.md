@@ -2,7 +2,9 @@
 
 _Visualise your dataset before training the model in one line!_
 
-![Example](COCO.png)
+<p align="center">
+   <img src="COCO.png" alt="Example"/>
+</p>
 
 Made changes to the bounding boxes or images? 
 Save time by visualising the data and avoid mistakes before starting the training process
