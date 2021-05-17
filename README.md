@@ -5,7 +5,13 @@ Visualise your dataset before training the model in one line!
 Made changes to the bounding boxes or images? 
 Save time by visualising the data and avoid mistakes before starting the training process
 
-Installation:
+Use Case: 
+- Dont forget to resize the bounding boxes
+- Visualise what augmentation functions do to your data
+
+Using simple GUI, visualise random images for your tasks
+
+Installation (Python 3.6+):
 ~~~
 pip install datalens
 ~~~
@@ -13,13 +19,16 @@ pip install datalens
 Usage: 
 ```
 import datalens
-image_dir_path = #PATH TO IMAGE DIRECTORY
-annotations_dict = #CHECK BELOW
-count = 10 #RANDOMLY SELECTED FROM THE DATASET
-
 datalens.Visualise(image_dir_path = image_dir_path, annotations_dict = annotations_dict, count = count)
 ```
 
-Use Case: 
-- Dont forget to resize the bounding boxes
-- Visualise what augmentation functions do to your data
+Current version supports Object Detection in 2D images.
+
+Data Formatting:
+```
+image_dir_path = #PATH TO IMAGE DIRECTORY
+annotations_dict = #OBJECT DETECTION - {image_filename: [{"bbox": [x, y, width, height], "category_id": <int>}, ...], ...}
+count = 10 #RANDOMLY SELECTED FROM THE DATASET
+```
+
+Contributions are welcome for different machine learning tasks for text, images and 3D Point cloud data.
