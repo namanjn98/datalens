@@ -10,7 +10,7 @@ setuptools.setup(
     description="A small example package",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="   ",
+    url="https://github.com/namanjn98/datalens",
     project_urls={},
     classifiers=[
         "Programming Language :: Python :: 3",
