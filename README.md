@@ -6,6 +6,7 @@ Made changes to the bounding boxes or images?
 Save time by visualising the data and avoid mistakes before starting the training process
 
 Use Case: 
+- Sanity check for the right dataset and annotations
 - Dont forget to resize the bounding boxes
 - Visualise what augmentation functions do to your data
 
@@ -28,7 +29,7 @@ Data Formatting:
 ```
 image_dir_path = #PATH TO IMAGE DIRECTORY
 annotations_dict = #OBJECT DETECTION - {image_filename: [{"bbox": [x, y, width, height], "category_id": <int>}, ...], ...}
-count = 10 #RANDOMLY SELECTED FROM THE DATASET
+count = 10 #NUMBER OF IMAGES TO VISUALISE
 ```
 
 Contributions are welcome for different machine learning tasks for text, images and 3D Point cloud data.
