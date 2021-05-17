@@ -2,12 +2,12 @@
 
 _Visualise your dataset before training the model in one line!_
 
+Made changes to the bounding boxes or images? 
+Save time by visualising the data and avoid mistakes before starting the training process
+
 <p align="center">
    <img src="COCO.png" alt="Example"/>
 </p>
-
-Made changes to the bounding boxes or images? 
-Save time by visualising the data and avoid mistakes before starting the training process
 
 Use Case: 
 - Sanity check for the right dataset and annotations
