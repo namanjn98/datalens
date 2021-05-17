@@ -47,13 +47,11 @@ class AppWindow(QMainWindow):
 
 	def setPhoto(self):
 		image = self.display_image
-		if image.shape[0] > image.shape[1]:
-			image = imutils.resize(image, height=600)
-		else:
-			image = imutils.resize(image, width=600)
+		image = imutils.resize(image, height=600) if image.shape[0] > image.shape[1] else imutils.resize(image, width=600)
 		frame = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 		image = QImage(frame, frame.shape[1],frame.shape[0],frame.strides[0],QImage.Format_RGB888)
 		self.canvas.setPixmap(QtGui.QPixmap.fromImage(image))
+		self.canvas.setAlignment(QtCore.Qt.AlignCenter)
 
 	def setBuffer(self):
 		images = []
@@ -61,30 +59,29 @@ class AppWindow(QMainWindow):
 
 		for index in range(range_of_mini_display):
 			image = self.image_list[self.buffer_start + index]
-
-			if image.shape[0] > image.shape[1]:
-				image = imutils.resize(image, height=120)
-			else:
-				image = imutils.resize(image, width=120)
-
+			image = imutils.resize(image, height=120) if image.shape[0] > image.shape[1] else imutils.resize(image, width=120)
 			frame = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-			image = QImage(frame, frame.shape[1],frame.shape[0],frame.strides[0],QImage.Format_RGB888)
+			image = QImage(frame,frame.shape[1],frame.shape[0],frame.strides[0],QImage.Format_RGB888)
 			images.append(image)
 
 		if range_of_mini_display > 0:
 			self.canvasBuffer_0.setPixmap(QtGui.QPixmap.fromImage(images[0]))
+			self.canvasBuffer_0.setAlignment(QtCore.Qt.AlignCenter)
 		if range_of_mini_display > 1:
 			self.canvasBuffer_1.setPixmap(QtGui.QPixmap.fromImage(images[1]))
+			self.canvasBuffer_1.setAlignment(QtCore.Qt.AlignCenter)
 		if range_of_mini_display > 2:
 			self.canvasBuffer_2.setPixmap(QtGui.QPixmap.fromImage(images[2]))
+			self.canvasBuffer_2.setAlignment(QtCore.Qt.AlignCenter)
 		if range_of_mini_display > 3:
 			self.canvasBuffer_3.setPixmap(QtGui.QPixmap.fromImage(images[3]))
+			self.canvasBuffer_3.setAlignment(QtCore.Qt.AlignCenter)
 		if range_of_mini_display > 4:
 			self.canvasBuffer_4.setPixmap(QtGui.QPixmap.fromImage(images[4]))
-
+			self.canvasBuffer_4.setAlignment(QtCore.Qt.AlignCenter)
 
 	def initUI(self):
-		self.setGeometry(200, 200, 800, 720)
+		self.setGeometry(200, 200, 600, 720)
 		self.setWindowTitle("Data Lens")
 
 		self.canvas = QtWidgets.QLabel(self)
@@ -116,7 +113,7 @@ class AppWindow(QMainWindow):
 		self.close_button = QtWidgets.QPushButton(self)
 		self.close_button.setText("Close")
 		self.close_button.resize(200, 50)
-		self.close_button.move(600, 670)
+		self.close_button.move(200, 670)
 		self.close_button.clicked.connect(self.close)
 
 		self.next_button = QtWidgets.QPushButton(self)
