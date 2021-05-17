@@ -1,6 +1,6 @@
 # Data Lens
 
-Visualise your dataset before training the model in one line!
+_Visualise your dataset before training the model in one line!_
 
 Made changes to the bounding boxes or images? 
 Save time by visualising the data and avoid mistakes before starting the training process
